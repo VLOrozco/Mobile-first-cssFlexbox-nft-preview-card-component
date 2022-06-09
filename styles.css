@@ -33,8 +33,8 @@ body, html {
 
   font-family: 'Outfit';
   font-style: normal;
-  font-weight: 200;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 15px;
   letter-spacing: 0.6px;
   line-height: 26px;
   text-align: left;
@@ -116,7 +116,6 @@ body, html {
     margin-left: 7.7px;
   }
 
-
 hr {
   width: 278px;
   height: 1px;
@@ -125,6 +124,37 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+.card-footer {
+  /* border: 1px solid white; */
+  display: flex;
+  align-items: center;
+  width: 280px;
+  height: 33px;
+  margin-left: 1.6em;
+  margin-top: 1em;
+}
+  .avatar {
+    width: 33px;
+    height: 33px;
+    border: 1px solid hsla(0, 0%, 100%, 1);
+    border-radius: 50%;
+  }
+  .creation-of, .name {
+    display: flex;
+    align-items: center;
+  }
+  .creation-of {
+    margin-left: 1rem;
+    margin-right: 1.3px;
+    width: 85px;
+    height: 19px;
+  }
+  .name {
+    width: 100px;
+    height: 19px;
+  }
+
 /* ========================================================================= */
 
 /* 3. TYPOGRAPHY */
@@ -135,26 +165,31 @@ hr {
   color: #FFFFFF;
 }
 .description-nft {
+  font-weight: 200;
   line-height: 26px;
+  font-size: 18px;
 }
 
 .eth-num {
   font-weight: 400;
-  font-size: 15px;
   line-height: 19px;
   color: #00FFF8;
 }
 
 .days {
-  font-size: 15px;
-  font-weight: 300;
   line-height: 19px;
   text-align: left;
 }
 
-
+.created-by {
+  line-height: 19px;
+}
+  .name {
+    color: #FFF;
+  }
 
 .attribution { 
+  margin-top: 1.5em;
   font-size: 11px; 
   text-align: center; 
 }
