@@ -5,6 +5,7 @@
 /* TABLE OF CONTENTS */
 /* 
 1. GLOBAL
+    -FLEXBOX
 2. LAYOUT
 3. TYPOGRAPHY
 4. MEDIA QUERIES
@@ -21,32 +22,24 @@ body, html {
   width: 100%;
   height: 100%;
 
+  /* FLEXBOX */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* TYPOGRAPHY & BACKGROUND */
   background-color: #0D192C;
 
   font-family: 'Outfit';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 18px;
+  letter-spacing: 0.6px;
   line-height: 26px;
-  text-align: center;
+  text-align: left;
   color: #8BACD9;
-
-  /* flexbox */
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
 }
-
-.card { 
-  background: #15263F;
-  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
-  border-radius: 15px;
-}
-
-/* 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); } */
 
 /* ========================================================================= */
 
@@ -55,6 +48,10 @@ body, html {
   height: 543px;
   width: 327px;
   border-radius: 15px;
+
+  background: #15263F;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
+  border-radius: 15px;
 }
 
 .image, .equilibrium, .view-img { 
@@ -62,6 +59,8 @@ body, html {
   width: 278px;
   border-radius: 8px;
   margin: auto;
+  margin-top: 0.6em;
+  margin-bottom: 1.6em;
 }
   .equilibrium { 
     height: 278px;
@@ -74,16 +73,94 @@ body, html {
   }
   .view-img:hover + .hide {
     display: block;
-    color: red;
+    background-color: hsla(178, 100%, 50%, 1);
+  }
+
+.nft-info, .stats {
+  width: 278px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+  .title-nft {
+    height: 28px;
+  }
+  .description-nft {
+    height: 52px;
+  }
+
+.stats, .nft-eth, .eth-num, .time, .clock, .days {
+  display: flex;
+  flex-direction: row;
+}
+  .stats {
+    justify-content: space-between;
+  }
+  .nft-eth, .time {
+    height: 19px;
+    justify-content: center;
+    align-items: center;
+  }
+  .eth {
+    height: 18px;
+    width: 11px;
+  }
+  .eth-num {
+    margin-left: 6.48px;
+  }
+
+  .clock {
+    width: 16px;
+    height: 16px;
+  }
+  .days {
+    margin-left: 7.7px;
   }
 
 
+hr {
+  width: 278px;
+  height: 1px;
+  background: hsla(216, 32%, 27%, 1);
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 /* ========================================================================= */
 
 /* 3. TYPOGRAPHY */
+.title-nft {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+.description-nft {
+  line-height: 26px;
+}
+
+.eth-num {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #00FFF8;
+}
+
+.days {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 19px;
+  text-align: left;
+}
 
 
 
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+  }
 
 /* ========================================================================= */
 
