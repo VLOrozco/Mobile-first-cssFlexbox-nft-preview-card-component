@@ -30,12 +30,15 @@ body, html {
   line-height: 26px;
   text-align: center;
   color: #8BACD9;
+
+  /* flexbox */
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card { 
-  display: flex;
-  flex-flow: column;
-
   background: #15263F;
   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
   border-radius: 15px;
@@ -48,8 +51,31 @@ body, html {
 /* ========================================================================= */
 
 /* 2. LAYOUT */
+.card { 
+  height: 543px;
+  width: 327px;
+  border-radius: 15px;
+}
 
+.image, .equilibrium, .view-img { 
+  height: 278px;
+  width: 278px;
+  border-radius: 8px;
+  margin: auto;
+}
+  .equilibrium { 
+    height: 278px;
+    width: 278px;
+    border-radius: 8px;
+  }
 
+  .hide { 
+    display: none;
+  }
+  .view-img:hover + .hide {
+    display: block;
+    color: red;
+  }
 
 
 /* ========================================================================= */
