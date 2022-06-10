@@ -42,8 +42,8 @@ Users should be able to:
 
 ## Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Code](https://github.com/VLOrozco/Mobile-first-cssFlexbox-nft-preview-card-component.git)
+- Live Site URL: [NFT preview card component](https://vlorozco.github.io/Mobile-first-cssFlexbox-nft-preview-card-component/)
 
 ---
 ## My process
