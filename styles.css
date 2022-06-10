@@ -270,7 +270,7 @@ hr {
   line-height: 20px;
 }
 
-  /* ACTIVE STATE LINE 65*/
+  /* ACTIVE STATE */
 .title-nft:hover, .name:hover {
   color:hsla(178, 100%, 50%, 1);
   cursor: pointer;
