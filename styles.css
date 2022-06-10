@@ -8,7 +8,7 @@
     -FLEXBOX
 2. LAYOUT
 3. TYPOGRAPHY
-4. MEDIA QUERIES
+4. MEDIA QUERY
 */
 
 
@@ -30,7 +30,6 @@ body, html {
 
   /* TYPOGRAPHY & BACKGROUND */
   background-color: #0D192C;
-
   font-family: 'Outfit';
   font-style: normal;
   font-weight: 300;
@@ -62,19 +61,33 @@ body, html {
   margin-top: 0.6em;
   margin-bottom: 1.6em;
 }
-  .equilibrium { 
-    height: 278px;
-    width: 278px;
+  .equilibrium {
+    display: relative;
+  }
+  .hide {
+    display: block;
+    position: relative;
+    top: -114%;
+  }
+  .view-img {
+    position: absolute;
+    top: -114%;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(178, 100%, 50%, 1);
+    opacity: 0.5;
     border-radius: 8px;
   }
+    .eye {
+      position: absolute;
+      opacity: 1;
+      margin: 127px;
+      z-index: 99;
+    }
 
-  .hide { 
-    display: none;
-  }
-  .view-img:hover + .hide {
-    display: block;
-    background-color: hsla(178, 100%, 50%, 1);
-  }
+    .hide {
+      visibility: hidden;
+    }
 
 .nft-info, .stats {
   width: 278px;
@@ -126,7 +139,6 @@ hr {
 }
 
 .card-footer {
-  /* border: 1px solid white; */
   display: flex;
   align-items: center;
   width: 280px;
@@ -199,16 +211,76 @@ hr {
 
 /* ========================================================================= */
 
-/* 4. MEDIA QUERIES */
-
-/* TABLET */
-/* @media screen and  (min-width: 768px) {
-
-} */
-
-
+/* 4. MEDIA QUERY */
 
 /* DESKTOP */
-/* @media screen and  (min-width: 1440px) {
-  
-} */
+@media screen and  (min-width: 1000px) {
+  /* LAYOUT */
+  .card {
+    height: 596px;
+    width: 350px;
+  }
+  .image, .equilibrium, .view-img { 
+    height: 302px;
+    width: 302px;
+    border-radius: 8px;
+    margin-top: 0.8em;
+  }
+    .title-nft {
+      margin-top: 2.3rem;
+    }
+
+  .description-nft {
+    letter-spacing: 0;
+    margin-top: 16px;
+  }
+
+  .stats, hr {
+    margin-top: 24px;
+  }
+  .nft-info, .stats {
+    width: 302px;
+  }
+
+  .nft-eth, .time {
+    height: 20px;
+  }
+
+  .eth-num {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  }
+  .days {
+    margin-right: 0.3em;
+  }
+
+  hr {
+    width: 302px;
+  }
+
+  .card-footer {
+    margin-top: 1.5rem;
+  }
+
+ /* BACK TO STATS */
+  /* TYPOGRAPHY */
+.created-by {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+  /* ACTIVE STATE LINE 65*/
+.title-nft:hover, .name:hover {
+  color:hsla(178, 100%, 50%, 1);
+  cursor: pointer;
+}
+
+.equilibrium:hover {
+  cursor: pointer;
+}
+.equilibrium:active + .show {
+  cursor: pointer;
+  visibility: visible;
+}
+}
