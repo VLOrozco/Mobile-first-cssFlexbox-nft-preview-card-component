@@ -2,35 +2,31 @@
 
 /* ========================================================================= */
 
-/* TABLE OF CONTENTS */
-/* 
+/* MOBILE VIEW @ 375px*/
 
+/* TABLE OF CONTENTS
 1. GLOBAL
-    -FLEXBOX
-2. LAYOUT
-3. TYPOGRAPHY
-4. MEDIA QUERY
-*/
-
+2. TYPOGRAPHY
+3. LAYOUT
+4. MEDIA QUERY @ MIN-WIDTH:800px;
+=======================  */
 
 
 /* ========================================================================= */
-
 /* 1. GLOBAL */
-body, html {
+
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-
-  /* FLEXBOX */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+}
+body {
+  box-sizing: border-box;
+  background-color: rgb(13, 25, 44);
 
   /* TYPOGRAPHY & BACKGROUND */
-  background-color: #0D192C;
   font-family: 'Outfit';
   font-style: normal;
   font-weight: 300;
@@ -38,85 +34,181 @@ body, html {
   letter-spacing: 0.6px;
   line-height: 26px;
   text-align: left;
-  color: #8BACD9;
+  color: rgb(139, 172, 217);
+}
+
+div,
+img,
+h1,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 /* ========================================================================= */
+/* 2. TYPOGRAPHY */
 
+/* NFT INFO | TYPOGRAPHY */
+.title-nft {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  color: rgb(255, 255, 255);
+}
+.description-nft {
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+/* STATS | TYPOGRAPHY */
+.eth-num {
+  font-weight: 400;
+  line-height: 19px;
+  color: rgb(0, 255, 248);
+}
+
+.days {
+  line-height: 19px;
+  text-align: left;
+}
+
+/* FOOTER | TYPOGRAPHY */
+.created-by {
+  line-height: 19px;
+}
+  .name {
+    color: rgb(255, 255, 255);
+  }
+
+/* ATTRIBUTION | TYPOGRAPHY */
+#attribution {
+  font-size: 11px; 
+  text-align: center;
+  line-height: 1rem;
+}
+  #attribution a { 
+    color: rgb(62, 82, 163); 
+  }
+
+
+/* ========================================================================= */
 /* 2. LAYOUT */
-.card { 
-  height: 543px;
-  width: 327px;
-  border-radius: 15px;
 
-  background: #15263F;
+#container {
+  min-width: 375px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* CARD | LAYOUT */
+.card {
+  width: 327px;
+  height: 543px;
+  margin: auto;
+  margin-top: 62px;
+  margin-bottom: 62px;
+  background: rgb(21, 38, 63);
   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
   border-radius: 15px;
 }
 
-.image, .equilibrium, .view-img { 
+/* NFT CARD IMAGES | LAYOUT */
+#image, #equilibrium, .overlay { 
+  width: 278px;
   height: 278px;
-  width: 278px;
-  border-radius: 8px;
   margin: auto;
-  margin-top: 0.6em;
   margin-bottom: 1.6em;
+  border-radius: 8px;
+  cursor: pointer;
 }
-  .equilibrium {
-    display: relative;
-  }
-  .hide {
+
+#image {
+  position: relative;
+  top: 1.5rem;
+}
+  #equilibrium {
     display: block;
-    position: relative;
-    top: -114%;
   }
-  .view-img {
-    position: absolute;
-    top: -114%;
-    width: 100%;
-    height: 100%;
-    background-color: hsla(178, 100%, 50%, 1);
-    opacity: 0.5;
-    border-radius: 8px;
-  }
-    .eye {
-      position: absolute;
-      opacity: 1;
-      margin: 127px;
-      z-index: 99;
-    }
 
-    .hide {
-      visibility: hidden;
-    }
-
-.nft-info, .stats {
-  width: 278px;
-  margin-left: 24px;
-  margin-right: 24px;
+#active-images {
+  width: 100%;
+  height: 100%;
+  margin-top: -18.8rem;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  opacity: 0;
+  transition: transform 3s;
 }
+  .overlay {
+    width: 278px;
+    height: 278px;
+    position: absolute;
+    background-color: rgb(0, 255, 247);
+    border-radius: 8px;
+    opacity: 0.5;
+    mix-blend-mode: normal;
+  }
+  #eye {
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    z-index: 5;
+  }
+    /* IMAGE HOVER & ACTIVE STATE */
+    #image:hover #active-images {
+      transform: rotateY(180deg);
+      opacity: 1;
+    }
+    #active-images:active {
+      opacity: 1;
+    }
+
+/* CARD TEXT | LAYOUT */
+#nft-info, .stats {
+  width: 278px;
+  margin-right: 24px;
+  margin-left: 24px;
+}
+  #nft-info {
+    margin-top: 3rem;
+  }
   .title-nft {
     height: 28px;
+    cursor: pointer;
+    transition: color ease 1s;
   }
   .description-nft {
     height: 52px;
+    margin-top: 0.75rem;
   }
+    /* TITLE & NAME | HOVER&ACTIVE STATE */
+    .title-nft:hover, .name:hover,
+    .title-nft:active, .name:active {
+      color:rgb(0, 255, 247);
+    }
 
-.stats, .nft-eth, .eth-num, .time, .clock, .days {
+
+/* STATS & ICONS | LAYOUT */
+.stats, #nft-eth, .eth-num, #time, .clock, .days {
   display: flex;
   flex-direction: row;
 }
   .stats {
+    margin-top: 1rem;
     justify-content: space-between;
   }
-  .nft-eth, .time {
+  #nft-eth, #time {
     height: 19px;
     justify-content: center;
     align-items: center;
   }
   .eth {
-    height: 18px;
     width: 11px;
+    height: 18px;
   }
   .eth-num {
     margin-left: 6.48px;
@@ -133,19 +225,20 @@ body, html {
 hr {
   width: 278px;
   height: 1px;
-  background: hsla(216, 32%, 27%, 1);
-  border: none;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  background: hsla(216, 32%, 27%, 1);
+  border: none;
 }
 
-.card-footer {
-  display: flex;
-  align-items: center;
+/* FOOTER | LAYOUT */
+#card-footer {
   width: 280px;
   height: 33px;
-  margin-left: 1.6em;
   margin-top: 1em;
+  margin-left: 1.6em;
+  display: flex;
+  align-items: center;
 }
   .avatar {
     width: 33px;
@@ -158,92 +251,73 @@ hr {
     align-items: center;
   }
   .creation-of {
-    margin-left: 1rem;
-    margin-right: 1.3px;
     width: 85px;
     height: 19px;
+    margin-right: 1.3px;
+    margin-left: 1rem;
   }
   .name {
     width: 100px;
     height: 19px;
+    cursor: pointer;
+    transition: color ease 1s;
+  }
+
+/* ATTRIBUTION | LAYOUT */
+#attribution {
+  position: relative;
+  bottom: -2rem;
+}
+  #attribution a {
+    transition: color ease 1s;
+  }
+  /* ATTRIBUTION HOVER & ACTIVE STATE */
+  #attribution > a:hover,
+  #attribution > a:active {
+    color:rgb(0, 255, 247);
   }
 
 /* ========================================================================= */
-
-/* 3. TYPOGRAPHY */
-.title-nft {
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 28px;
-  color: #FFFFFF;
-}
-.description-nft {
-  font-weight: 200;
-  line-height: 26px;
-  font-size: 18px;
-}
-
-.eth-num {
-  font-weight: 400;
-  line-height: 19px;
-  color: #00FFF8;
-}
-
-.days {
-  line-height: 19px;
-  text-align: left;
-}
-
-.created-by {
-  line-height: 19px;
-}
-  .name {
-    color: #FFF;
-  }
-
-.attribution { 
-  margin-top: 1.5em;
-  font-size: 11px; 
-  text-align: center; 
-}
-  .attribution a { 
-    color: hsl(228, 45%, 44%); 
-  }
-
-/* ========================================================================= */
-
 /* 4. MEDIA QUERY */
 
-/* DESKTOP */
-@media screen and  (min-width: 1000px) {
-  /* LAYOUT */
+/* DESKTOP VIEW @ MIN-WIDTH:800px */
+@media only screen and  (min-width: 800px) {
+  /* CARD | MQ */
   .card {
-    height: 596px;
     width: 350px;
+    height: 596px;
+    margin-top: 152px;
+    margin-bottom: 152px;
   }
-  .image, .equilibrium, .view-img { 
-    height: 302px;
+  /* IMAGES | MQ */
+  #image, #equilibrium, .overlay { 
     width: 302px;
+    height: 302px;
+    margin-top: 0;
     border-radius: 8px;
-    margin-top: 0.8em;
   }
-    .title-nft {
-      margin-top: 2.3rem;
+    #active-images {
+      margin-top: -20.4rem;
     }
 
+  /* NFT INFO | MQ */
+  .title-nft {
+    margin-top: 2.3rem;
+  }
   .description-nft {
     letter-spacing: 0;
-    margin-top: 16px;
+    margin-top: 18px;
   }
 
+  /* STATS & ICONS | MQ */
   .stats, hr {
     margin-top: 24px;
   }
-  .nft-info, .stats {
+  #nft-info, .stats {
     width: 302px;
   }
 
-  .nft-eth, .time {
+  #nft-eth, #time {
     height: 20px;
   }
 
@@ -260,27 +334,18 @@ hr {
     width: 302px;
   }
 
-  .card-footer {
-    margin-top: 1.5rem;
+  /* CARD-FOOTER | MQ */
+  #card-footer {
+    margin-top: -0.08rem;
   }
+    .created-by {
+      font-size: 16px;
+      line-height: 20px;
+    }
 
-  /* TYPOGRAPHY */
-.created-by {
-  font-size: 16px;
-  line-height: 20px;
-}
-
-  /* ACTIVE STATE */
-.title-nft:hover, .name:hover {
-  color:hsla(178, 100%, 50%, 1);
-  cursor: pointer;
-}
-
-.equilibrium:hover {
-  cursor: pointer;
-}
-.equilibrium:active + .show {
-  cursor: pointer;
-  visibility: visible;
-}
+  /* ATTRIBUTION | MQ */
+  #attribution {
+    line-height: 1.2rem;
+    bottom: -2.8rem;
+  }
 }
