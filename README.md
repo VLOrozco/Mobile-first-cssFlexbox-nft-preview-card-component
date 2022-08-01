@@ -67,10 +67,10 @@ Updated Monday, August 1, 2022 |
 ```html
 <!-- IMAGES -->
 <div id="image" role="img">
-  <img id="equilibrium" src="/images/image-equilibrium.jpg" alt="NFT equilibrium image">
+  <img id="equilibrium" src="images/image-equilibrium.jpg" alt="NFT equilibrium image">
   <div id="active-images">
     <div class="overlay"></div>
-    <img id="eye" src="/images/icon-view.svg" alt="Image of an eye icon">
+    <img id="eye" src="images/icon-view.svg" alt="Image of an eye icon">
   </div>
 </div>
 ```
