@@ -3,56 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <title>Frontend Mentor | NFT preview card component</title>
-
   <link rel="stylesheet" href="styles.css">
-
 </head>
+
 <body>
-<!-- CARD -->
-<div class="card">
-  <!-- IMAGE -->
-  <div class="image">
-    <img src="images/image-equilibrium.jpg" alt="equilibrium image myImg" class="equilibrium">
-    
-    <div class="hide show">
-      <div class="view-img"></div>
-      <img src="images/icon-view.svg" alt="eye view icon" class="eye">
+  <div id="container">
+    <!-- CARD -->
+    <div class="card">
+
+      <!-- IMAGES -->
+      <div id="image" role="img">
+        <img id="equilibrium" src="/images/image-equilibrium.jpg" alt="NFT equilibrium image">
+        <div id="active-images">
+          <div class="overlay"></div>
+          <img id="eye" src="/images/icon-view.svg" alt="Image of an eye icon">
+        </div>
+      </div>
+
+      <!-- NFT INFO -->
+      <main id="nft-info">
+        <h1 class="title-nft">
+          Equilibrium #3429
+        </h1>
+        <p class="description-nft">
+          Our Equilibrium collection promotes balance and calm.
+        </p>
+      </main>
+
+      <!-- STATS & ICONS -->
+      <section class="stats">
+        <div id="nft-eth">
+          <img src="/images/icon-ethereum.svg" alt="Ethereum icon" class="eth">
+          <p class="eth-num">
+            0.041 ETH
+          </p>
+        </div>
+        <div id="time">
+          <img src="/images/icon-clock.svg" alt="" class="clock">
+          <p class="days">
+            3 days left
+          </p>
+        </div>
+      </section>
+
+      <hr>
+
+      <!-- CARD-FOOTER -->
+      <footer id="card-footer">
+        <img class="avatar" src="/images/image-avatar.png" alt="avatar image">
+        <span class="creation-of">Creation of</span><span class="name">Jules Wyvern</span>
+      </footer>
+
+      <!-- ATTRIBUTION -->
+      <div id="attribution" aria-label="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        <br>
+        Coded by <a href="https://vlorozco.com" target="_blank">Veronica L. Orozco</a>.
+      </div>
+
     </div>
   </div>
-
-  <!-- NFT INFO -->
-  <div class="nft-info">
-    <h1 class="title-nft">Equilibrium #3429</h1>
-    <p class="description-nft">Our Equilibrium collection promotes balance and calm.</p>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="nft-eth">
-      <img src="images/icon-ethereum.svg" alt="" class="eth">
-      <p class="eth-num">0.041 ETH</p>
-    </div>
-
-    <div class="time">
-    <img src="images/icon-clock.svg" alt="" class="clock">
-    <p class="days">3 days left</p>
-    </div>
-  </div>
-  <hr>
-  <!-- CARD-FOOTER -->
-  <div class="card-footer">
-    <img src="images/image-avatar.png" alt="avatar image" class="avatar">
-    <span class="creation-of">Creation of</span><span class="name">Jules Wyvern</span>
-  </div>
-</div>
-
-<div class="attribution">
-  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-  Coded by <a href="https://www.frontendmentor.io/profile/VLOrozco" target="_blank">Veronica L. Orozco</a>.
-</div>
 </body>
 </html>
